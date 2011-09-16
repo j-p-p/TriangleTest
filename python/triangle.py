@@ -4,7 +4,7 @@ import sys
 from decimal import *
 
 def isValidLength(sideA, sideB, sideC):
-	if sideA < 0 or sideB < 0 or sideC < 0:
+	if sideA <= 0 or sideB <= 0 or sideC <= 0:
 		return False
 	return True
 	
@@ -18,7 +18,7 @@ def isEquilateralTriangle(sideA, sideB, sideC):
 		return True
 	return False
 	
-def isIsocelesTriangle(sideA, sideB, sideC):
+def isIsoscelesTriangle(sideA, sideB, sideC):
 	if sideA == sideB or sideA == sideC or sideB == sideC:
 		return True
 	return False
@@ -45,14 +45,14 @@ def testTriangle(sideA, sideB, sideC):
 		print(response+" an equilateral triangle")
 		return
 		
-	if isIsocelesTriangle(sideA, sideB, sideC):
+	if isIsoscelesTriangle(sideA, sideB, sideC):
 		response = response + " an isoceles"
 	
 	if isRightTriangle(sideA, sideB, sideC):
 		response = response + " right"
 		
 	if (not isRightTriangle(sideA, sideB, sideC) and 
-		not isIsocelesTriangle(sideA, sideB, sideC)):
+		not isIsoscelesTriangle(sideA, sideB, sideC)):
 		response = response + " scalene"
 		
 	response = response + " triangle"
