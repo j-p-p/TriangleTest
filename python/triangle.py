@@ -44,7 +44,7 @@ def isValidLength(sideA, sideB, sideC):
     return True
 
 def isValidTriangleSides(sideA, sideB, sideC):
-    if sideA + sideB < sideC or sideB+sideC < sideA:
+    if sideA + sideB <= sideC or sideB+sideC <= sideA or sideC+sideA <= sideB:
         return False
     return True
 
