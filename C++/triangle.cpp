@@ -21,7 +21,8 @@ using namespace std;
 bool isValidTriangleSides(double sideA, double sideB, double sideC){
     if(sideA <= 0 || sideB <= 0 || sideC <= 0){
         return false;
-    }else if(sideA + sideB < sideC || sideB + sideC < sideA){
+    }
+    if(sideA + sideB <= sideC || sideB + sideC <= sideA){
         return false;
     } 
         return true; 
