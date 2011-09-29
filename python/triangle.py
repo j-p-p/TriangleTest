@@ -33,6 +33,9 @@ Error: Sides of length (-40,-30,-50) are invalid. all sides length must positive
 Sides of length (1,1,1.4142135623730950488016887241) forms an isosceles right triangle
 
 
+>>> triangle(['10.1','20.2','22.584'])
+Sides of length (10.1,20.2,22.584) forms a right triangle
+
 """	
 import sys
 from decimal import *
@@ -60,7 +63,7 @@ def isIsoscelesTriangle(sideA, sideB, sideC):
 
 def isRightTriangle(sideA, sideB, sideC):
     squaredSides = sorted([x*x for x in [sideA, sideB, sideC]])
-    if squaredSides[2] == squaredSides[0]+squaredSides[1]:
+    if abs(squaredSides[2]-(squaredSides[0]+squaredSides[1])) <= Decimal('0.012944') :
         return True
     return False
 
