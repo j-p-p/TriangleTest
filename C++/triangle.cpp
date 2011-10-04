@@ -43,11 +43,11 @@ bool isIsoscelesTriangle(double sideA, double sideB, double sideC){
 }
 
 bool isRightTriangle(double sideA, double sideB, double sideC){
-    if(sideA * sideA == sideB * sideB + sideC * sideC){
+    if(((sideA * sideA) - ((sideB * sideB) + (sideC * sideC))) <= 0.012944) {
         return true;
-    }else if(sideB * sideB == sideA * sideA + sideC * sideC){
+    }else if(((sideB * sideB) - ((sideA * sideA) + (sideC * sideC))) <= 0.012944){
         return true;
-    }else if(sideC * sideC == sideA * sideA + sideB * sideB){
+    }else if(((sideC * sideC) - ((sideA * sideA) + (sideB * sideB))) <= 0.012944) {
         return true;
     }
     return false;
@@ -74,6 +74,7 @@ int main(int argc, char *argv[]) {
    s1 >> sideA;
    s2 >> sideB;
    s3 >> sideC;
+
 
    //convert to strings
    string a = argv[1];
