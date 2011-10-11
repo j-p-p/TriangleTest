@@ -15,6 +15,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
@@ -43,11 +44,11 @@ bool isIsoscelesTriangle(double sideA, double sideB, double sideC){
 }
 
 bool isRightTriangle(double sideA, double sideB, double sideC){
-    if(((sideA * sideA) - ((sideB * sideB) + (sideC * sideC))) <= 0.012944) {
+    if(abs((sideA * sideA) - ((sideB * sideB) + (sideC * sideC))) <= 0.012944) {
         return true;
-    }else if(((sideB * sideB) - ((sideA * sideA) + (sideC * sideC))) <= 0.012944){
+    }else if(abs((sideB * sideB) - ((sideA * sideA) + (sideC * sideC))) <= 0.012944){
         return true;
-    }else if(((sideC * sideC) - ((sideA * sideA) + (sideB * sideB))) <= 0.012944) {
+    }else if(abs((sideC * sideC) - ((sideA * sideA) + (sideB * sideB))) <= 0.012944) {
         return true;
     }
     return false;
